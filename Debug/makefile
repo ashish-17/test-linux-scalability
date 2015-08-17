@@ -8,6 +8,8 @@ RM := rm -rf
 
 # All of the sources participating in the build are defined here
 -include sources.mk
+-include michael-new/Debug/subdir.mk
+-include michael-new/subdir.mk
 -include subdir.mk
 -include objects.mk
 
@@ -28,7 +30,7 @@ all: test-linux-scalability
 test-linux-scalability: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: GCC C Linker'
-	gcc -L../libs -Xlinker -rpath=../libs -o "test-linux-scalability" $(OBJS) $(USER_OBJS) $(LIBS)
+	gcc -L../libs/x86 -Xlinker -rpath=../libs/x86 -o "test-linux-scalability" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
