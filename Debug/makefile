@@ -28,7 +28,7 @@ all: test-linux-scalability
 test-linux-scalability: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: GCC C Linker'
-	gcc -L../libs/x86 -Xlinker -rpath=../libs/x86 -o "test-linux-scalability" $(OBJS) $(USER_OBJS) $(LIBS)
+	gcc -L../libs -Xlinker -rpath=../libs -o "test-linux-scalability" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
